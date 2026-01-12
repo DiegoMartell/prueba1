@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplicación y División</title>
+<script>
+// Función para multiplicar
+function multiplyBy() {
+  var num1 = document.getElementById("firstNumber").value;
+  var num2 = document.getElementById("secondNumber").value;
+  
+  // Validación simple
+  if (num1 === "" || num2 === "") {
+    alert("Please enter both numbers");
+    return;
+  }
+  
+  // Convertir a números
+  num1 = parseFloat(num1);
+  num2 = parseFloat(num2);
+  
+  // Mostrar resultado
+  document.getElementById("result").innerHTML = num1 * num2;
+}
+
+// Función para dividir
+function divideBy() {
+  var num1 = document.getElementById("firstNumber").value;
+  var num2 = document.getElementById("secondNumber").value;
+  
+  // Validación simple
+  if (num1 === "" || num2 === "") {
+    alert("Please enter both numbers");
+    return;
+  }
+  
+  // Convertir a números
+  num1 = parseFloat(num1);
+  num2 = parseFloat(num2);
+  
+  // Validar división por cero
+  if (num2 === 0) {
+    alert("Cannot divide by zero");
+    return;
+  }
+  
+  // Mostrar resultado
+  document.getElementById("result").innerHTML = num1 / num2;
+}
+</script>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 30px;
+}
+input[type="text"] {
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+input[type="button"] {
+  margin-top: 10px;
+  padding: 5px 15px;
+}
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+</style>
+</head>
+<body>
+
+<h3>Calculadora</h3>
+
+<form>
+  1st Number : <input type="text" id="firstNumber" value="12"><br>
+  2nd Number : <input type="text" id="secondNumber" value="10"><br>
+  
+  <input type="button" onclick="multiplyBy()" value="Multiply">
+  <input type="button" onclick="divideBy()" value="Divide">
+</form>
+
+<p>The Result Is :<br>
+<span id="result">120</span></p>
+
+<script>
+// Mostrar ejemplo inicial
+document.getElementById("result").innerHTML = 12 * 10;
+</script>
+
+</body>
+</html>
