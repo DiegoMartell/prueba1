@@ -1,4 +1,4 @@
 function imprimir_pantalla()
 {
-window.print();
+alert(document.URL);
 }
